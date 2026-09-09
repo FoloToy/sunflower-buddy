@@ -1,0 +1,17 @@
+name: Firmware checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v5.5.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Sunflower Buddy V1.4 firmware
+        shell: bash
+        run: |
+          . /opt/esp/idf/export.sh
+          ./tools/validate.sh --firmware

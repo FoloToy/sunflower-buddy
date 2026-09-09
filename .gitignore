@@ -1,0 +1,17 @@
+.vscode/
+.cache/
+build/
+managed_components/
+build-host/
+sdkconfig
+sdkconfig.old
+releases
+.codex
+.agents
+main/data/audio/product/
+.venv-upload/
+__pycache__/
+*.py[cod]
+
+/local.log
+/local_log_raw.bin

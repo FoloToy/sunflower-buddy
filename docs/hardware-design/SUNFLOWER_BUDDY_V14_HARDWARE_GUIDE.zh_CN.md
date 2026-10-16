@@ -2,6 +2,8 @@
 
 # Sunflower Buddy V1.4 硬件指南
 
+本详细指南描述独立工程 `examples/hardware-demo`。默认根目录 main 仅做最小初始化，使用 [BSP 指南](../BSP.zh_CN.md) 记录的最小 factory 分区。
+
 事实源优先级：实测/产品规格、`components/bsp/include/bsp_pins.h`、BSP 适配实现、
 本文档。
 

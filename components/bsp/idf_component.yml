@@ -5,4 +5,8 @@ dependencies:
   espressif/led_strip: "3.0.3"
   folotoy/folotoy-firmware-driver:
     git: https://github.com/FoloToy/folotoy-firmware-driver-open-source.git
-    version: "main"
+    version: "f9982b1518d6689023af7d0baa48070f7fe920d7"
+
+description: FoloToy sunflower-buddy hardware BSP
+license: MIT
+version: 0.1.0

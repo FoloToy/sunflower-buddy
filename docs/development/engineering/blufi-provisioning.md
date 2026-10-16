@@ -2,7 +2,7 @@
 
 # BLUFI Wi-Fi Provisioning
 
-This page documents the behavior implemented by `main/demo_blufi.c`. BLUFI is
+This page documents the behavior implemented by `examples/hardware-demo/main/demo_blufi.c`. BLUFI is
 demo-level application behavior, not a reusable BSP hardware API.
 
 ## Scope and security boundary

@@ -2,6 +2,8 @@
 
 # Sunflower Buddy V1.4 Hardware Guide
 
+This detailed guide describes the standalone `examples/hardware-demo` project. The default root main performs minimal bring-up only and uses the factory-only layout documented in [BSP.md](../BSP.md).
+
 Source-of-truth priority: measured/product specification, then
 `components/bsp/include/bsp_pins.h`, then the BSP adapter, then this document.
 

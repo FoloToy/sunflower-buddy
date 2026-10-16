@@ -7,8 +7,8 @@
 - Follow adjacent C/C++ style with four-space indentation. Public board APIs use
   `bsp_`; file-local state uses `s_`; hardware constants use `BSP_*`.
 - Put reusable hardware ownership and sequencing in `components/bsp`. Keep demo
-  state and user interaction in `main`; Wi-Fi/BLUFI provisioning remains in
-  `main/demo_blufi.*` because it is not a board-specific peripheral API.
+  state and user interaction in `examples/hardware-demo/main` (or a downstream application); Wi-Fi/BLUFI provisioning remains in
+  `examples/hardware-demo/main/demo_blufi.*` because it is not a board-specific peripheral API.
 - Define pins, bus instances, addresses, clock rates, and validated electrical
   parameters only in `components/bsp/include/bsp_pins.h`.
 - Do not add production services, credentials, OTA, cloud protocols, or product

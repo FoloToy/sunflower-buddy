@@ -68,19 +68,19 @@ def main() -> int:
     require("components/bsp/include/bsp_power.hpp",
             ("bsp_power_get_status", "bsp_power_set_charging_enabled", "bsp_power_shutdown"))
     require("components/bsp/include/bsp_motor.hpp", ("bsp_motor_enable_overcurrent_monitor",))
-    require("main/main.cpp", ("demo_record_and_playback", "bsp_wakeup_set_callback", "xQueueSend"))
-    require("main/demo_record_playback.cpp",
+    require("examples/hardware-demo/main/main.cpp", ("demo_record_and_playback", "bsp_wakeup_set_callback", "xQueueSend"))
+    require("examples/hardware-demo/main/demo_record_playback.cpp",
             ("bsp_audio_read", "bsp_button_is_pressed", "bsp_audio_write"))
-    require("main/demo_blufi.c",
+    require("examples/hardware-demo/main/demo_blufi.c",
             ("esp_blufi_profile_init", "esp_wifi_set_config",
              "esp_timer_start_once", "COMMAND_RESET_PROVISIONING",
              "esp_ble_gatt_set_local_mtu"))
-    require("main/main.cpp",
+    require("examples/hardware-demo/main/main.cpp",
             ("BSP_BUTTON_LONG_PRESSED", "demo_blufi_reset_provisioning"))
-    require("main/CMakeLists.txt", ("littlefs_create_partition_image(storage data",))
-    require_sha256("main/data/gx_bl/grus-i2c.boot",
+    require("examples/hardware-demo/main/CMakeLists.txt", ("littlefs_create_partition_image(storage data",))
+    require_sha256("examples/hardware-demo/main/data/gx_bl/grus-i2c.boot",
                    "8489b1c2e3428deee1ae8627116e3884652cad95928ba153c0e128371657ef77")
-    require_sha256("main/data/gx_bl/mcu_nor.bin",
+    require_sha256("examples/hardware-demo/main/data/gx_bl/mcu_nor.bin",
                    "393a1641eda927f3e45610458232d1d9e5cce27ed83a1f44de8270ff8a50c1f1")
 
     forbidden = ("application.cpp", "mcp_server.cpp", "mqtt_protocol.cpp")

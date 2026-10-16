@@ -6,16 +6,17 @@
 
 ```text
 需求
-  └─ main/main.cpp 事件路由与初始化
-      ├─ main/demo_record_playback.cpp 音频/反馈示例
-      ├─ main/demo_blufi.*         Wi-Fi/BLE 配网行为
+  └─ main/main.cpp 最小初始化（无事件路由）
+  └─ examples/hardware-demo/main/main.cpp 诊断事件路由
+      ├─ examples/hardware-demo/main/demo_record_playback.cpp 音频/反馈示例
+      ├─ examples/hardware-demo/main/demo_blufi.*         Wi-Fi/BLE 配网行为
       └─ components/bsp/include/   稳定板级 API
           └─ components/bsp/src/   硬件实现
               └─ bsp_pins.h        硬件事实唯一来源
 ```
 
-可复用硬件能力放进 BSP，并通过精简的 `main/demo_*` 模块展示；事件路由保留在
-`main.cpp`，Wi-Fi/BLUFI 状态保留在 `demo_blufi.*`。耗时操作必须放在应用任务中，
+可复用硬件能力放进 BSP，并通过精简的 `examples/hardware-demo/main/demo_*` 模块展示；事件路由保留在
+`examples/hardware-demo/main/main.cpp`，Wi-Fi/BLUFI 状态保留在 `demo_blufi.*`。耗时操作必须放在应用任务中，
 不能放在按键、蓝牙、Wi-Fi、定时器或中断回调中。复用现有 I2C 总线并保持明确的
 供电顺序，不得从通用 ESP32-S3 开发板猜测本设备引脚或电气行为。
 

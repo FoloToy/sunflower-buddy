@@ -8,7 +8,7 @@ and power parameters. Each other public header exposes one hardware capability.
 Drivers own their resources: all I2C devices reuse `bsp_i2c_bus()`, callbacks do
 not block, audio work runs outside callbacks, and the GX8002 rail sequence stays
 IO → 10 ms → CORE when powering up and CORE → 10 ms → IO when powering down.
-Wi-Fi and BLUFI are application behavior in `main/demo_blufi.*`; they do not own
+Wi-Fi and BLUFI are application behavior in `examples/hardware-demo/main/demo_blufi.*`; they do not own
 board-specific pins and intentionally are not BSP APIs.
 
 ## Modules

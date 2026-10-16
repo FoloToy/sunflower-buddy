@@ -2,7 +2,7 @@
 
 # BLUFI Wi-Fi 配网
 
-本文记录 `main/demo_blufi.c` 的实际行为。BLUFI 属于 Demo 应用逻辑，不是可复用的
+本文记录 `examples/hardware-demo/main/demo_blufi.c` 的实际行为。BLUFI 属于 Demo 应用逻辑，不是可复用的
 BSP 硬件 API。
 
 ## 范围与安全边界

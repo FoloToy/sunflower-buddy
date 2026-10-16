@@ -1,0 +1,4 @@
+FoloToy board support source is MIT licensed. Dependencies retain their original notices.
+Public firmware driver dependency: FoloToy/folotoy-firmware-driver-open-source, pinned in component manifest.
+See docs/PROVENANCE.md for the reviewed source snapshots.
+Existing GX8002 recovery binaries remain only in the optional hardware demo; they are not covered by the source-code license grant.

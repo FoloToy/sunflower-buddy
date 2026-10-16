@@ -59,23 +59,12 @@ dependencies:
     source:
       type: idf
     version: 5.5.3
-  joltwallet/littlefs:
-    component_hash: 34b8c56a14f10b440845fe972ce34ef41d1d205bcb139b3dfc58983a10abf59b
-    dependencies:
-    - name: idf
-      require: private
-      version: '>=5.0'
-    source:
-      registry_url: https://components.espressif.com/
-      type: service
-    version: 1.19.1
 direct_dependencies:
 - espressif/button
 - espressif/esp_codec_dev
 - espressif/led_strip
 - folotoy/folotoy-firmware-driver
 - idf
-- joltwallet/littlefs
-manifest_hash: 9f6b041d12b365ce76066c20bcbd437b88b9276f09f18f4f4e5bca51041b5cb4
+manifest_hash: 67cc060f359e41ec0980da9437eb1b655ba860ee316bec07c83c81f1be6a9764
 target: esp32s3
 version: 2.0.0

@@ -40,8 +40,9 @@ Demo、硬件约束和可重复验证集中在同一仓库中。它不是产品�
 ```text
 components/bsp/include/  稳定 API 与权威引脚定义
 components/bsp/src/      板级资源所有权与硬件实现
-main/                    单一录音回放与 BLUFI 参考 Demo
-main/data/gx_bl/         保留的 GX8002 boot 与唤醒词固件
+main/                    最小板级初始化
+examples/hardware-demo/  独立录音回放与 BLUFI 诊断
+examples/hardware-demo/main/data/gx_bl/         保留的 GX8002 boot 与唤醒词固件
 docs/                    双语工程和硬件文档
 tests/                   仓库契约主机测试
 tools/                   本地静态与隔离固件验证

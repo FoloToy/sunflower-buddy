@@ -1,21 +1,15 @@
-<p align="right"><a href="AGENTS.md">English</a> · <strong>简体中文</strong></p>
+[English](AGENTS.md)
 
-# 仓库开发约定
+# Agent 开发入口
 
-- 本仓库是 Sunflower Buddy V1.4 硬件参考工程，不是完整产品固件。
-- 仅支持 ESP-IDF 5.5.3 和 ESP32-S3。
-- 开始工作先执行 `git status --short --branch`，保留无关修改。
-- 硬件常量只能定义在 `components/bsp/include/bsp_pins.h`。
-- 可复用硬件接口与实现放入 `components/bsp`。
-- 最小可运行示例和应用行为放入 `main/demo_*`。
-- Wi-Fi/BLUFI 配网保留在 `main/demo_blufi.*`；禁止输出凭据内容，新一轮配网前必须
-  重置已有 BLUFI 连接。
-- 不添加云端协议、内置凭据、OTA、产品状态机或媒体资源包。
-- 按键及中断回调不得阻塞。
-- 所有设备复用 BSP 管理的 I2C0，禁止创建第二个总线所有者。
-- 不得改变 GX8002 的电压、供电顺序及 10 ms 延时。
-- 分别报告编译、主机测试、设备测试和未验证硬件项。
+先运行 `git status --short --branch`，保留用户修改。按任务读取 `docs/BSP.zh_CN.md` 和相关头文件，不需要一次读取全部文档。
 
-修改硬件相关代码前阅读 `docs/hardware-design/SUNFLOWER_BUDDY_V14_HARDWARE_GUIDE.zh_CN.md`；
-修改 Wi-Fi/BLE 配网前阅读
-`docs/development/engineering/blufi-provisioning.zh_CN.md`。
+- 以测量/规格书 → `bsp_pins.h` → BSP 实现 → 文档为硬件事实优先级。
+- 硬件 API 放 `components/bsp`；产品应用在下游工程，默认 main 保持最小；演示放 `examples/hardware-demo`。
+- 不复制私有产品源码、凭据、身份分区或云逻辑。引脚、地址只在 `bsp_pins.h` 定义。
+- 回调仅复制/入队，不阻塞，不在中断中执行 I2C、音频或网络。生命周期由一个应用任务串行调用。
+- 复用 BSP 总线，禁止重复所有者。PMU 与 GX8002 的电压、顺序和延时不得从其他板型套用。
+- 修改后构建默认工程和 Demo：`./tools/build.sh`。中英文文档同步。
+- 交付分别报告 Build、Host tests、Device tests、Unverified；无真机结果不得声称硬件通过。烧录前需针对具体设备/镜像取得授权。
+
+[按任务读取仓库内 Agent skills](skills/README.zh_CN.md)。

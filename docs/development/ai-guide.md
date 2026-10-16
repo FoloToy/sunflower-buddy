@@ -7,16 +7,17 @@ for the capability being changed.
 
 ```text
 requirement
-  └─ main/main.cpp event routing and initialization
-      ├─ main/demo_record_playback.cpp audio/feedback example
-      ├─ main/demo_blufi.*         Wi-Fi/BLE provisioning behavior
+  └─ main/main.cpp minimal bring-up (no event routing)
+  └─ examples/hardware-demo/main/main.cpp diagnostic event routing
+      ├─ examples/hardware-demo/main/demo_record_playback.cpp audio/feedback example
+      ├─ examples/hardware-demo/main/demo_blufi.*         Wi-Fi/BLE provisioning behavior
       └─ components/bsp/include/   stable board API
           └─ components/bsp/src/   hardware implementation
               └─ bsp_pins.h        hardware source of truth
 ```
 
 Add reusable hardware behavior to the BSP and demonstrate it in a focused
-`main/demo_*` module. Keep event routing in `main.cpp`; keep Wi-Fi/BLUFI state in
+`examples/hardware-demo/main/demo_*` module. Keep event routing in `examples/hardware-demo/main/main.cpp`; keep Wi-Fi/BLUFI state in
 `demo_blufi.*`. Slow work must run in an application task, not a button,
 Bluetooth, Wi-Fi, timer, or interrupt callback. Reuse the existing I2C bus and
 preserve explicit power sequencing. Do not infer pins or electrical behavior

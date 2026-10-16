@@ -4,6 +4,11 @@
 
 ## Unreleased
 
+### Changed
+
+- Made the default application a minimal board bring-up. Moved the complete interactive diagnostics to `examples/hardware-demo`, an independent ESP-IDF project.
+- Added a minimal factory-only Flash layout and pinned the public driver commit.
+
 ### Added
 
 - Created the standalone Sunflower Buddy project.

@@ -7,7 +7,7 @@
 
 每个驱动负责自身资源：所有 I2C 设备复用 `bsp_i2c_bus()`，回调不得阻塞，音频操作
 必须在回调外执行。GX8002 上电保持 IO → 10 ms → CORE，断电保持 CORE → 10 ms → IO。
-Wi-Fi 与 BLUFI 是 `main/demo_blufi.*` 中的应用行为，不持有板级专用引脚，因此不属于
+Wi-Fi 与 BLUFI 是 `examples/hardware-demo/main/demo_blufi.*` 中的应用行为，不持有板级专用引脚，因此不属于
 BSP API。
 
 ## 模块

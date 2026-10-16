@@ -1,21 +1,15 @@
-<p align="right"><strong>English</strong> · <a href="AGENTS.zh_CN.md">简体中文</a></p>
+[简体中文](AGENTS.zh_CN.md)
 
-# Repository Guidelines
+# Agent development entry
 
-- This is a Sunflower Buddy V1.4 hardware-reference project, not production firmware.
-- Use ESP-IDF 5.5.3 and target only ESP32-S3.
-- Start with `git status --short --branch` and preserve unrelated work.
-- Hardware constants belong only in `components/bsp/include/bsp_pins.h`.
-- Reusable hardware APIs and implementations belong in `components/bsp`.
-- Small runnable examples and application behavior belong in `main/demo_*`.
-- Wi-Fi/BLUFI provisioning stays in `main/demo_blufi.*`; never log credential
-  contents, and reset an active BLUFI connection before starting a new session.
-- Do not add cloud protocols, embedded credentials, OTA, product state machines, or media bundles.
-- Button and interrupt callbacks must remain non-blocking.
-- Reuse the BSP-owned I2C bus; never create a second owner for I2C0.
-- Preserve the documented GX8002 voltage values, rail order, and 10 ms delay.
-- Report build, host tests, device tests, and remaining hardware checks separately.
+Start with `git status --short --branch` and preserve user changes. Route to `docs/BSP.md` and affected headers, rather than loading all documentation.
 
-Read `docs/hardware-design/SUNFLOWER_BUDDY_V14_HARDWARE_GUIDE.md` before hardware
-changes and `docs/development/engineering/blufi-provisioning.md` before
-Wi-Fi/BLE provisioning changes.
+- Hardware authority: measurement/specification → `bsp_pins.h` → implementation → docs.
+- Reusable hardware APIs belong in `components/bsp`; product applications belong downstream. Keep default main minimal; diagnostics belong in `examples/hardware-demo`.
+- Do not copy private product applications, credentials, identity partitions or cloud logic. Pins and device addresses belong only in `bsp_pins.h`.
+- Callbacks copy/queue data without blocking; never perform I2C, audio or network work in ISR context. Serialize lifecycle calls from one application owner.
+- Reuse BSP-owned buses. Preserve board-specific PMU/GX8002 voltages, rail order and delays.
+- Build baseline and standalone demo with `./tools/build.sh`. Keep English/Chinese docs aligned.
+- Report Build, Host tests, Device tests and Unverified separately. Compilation is not device validation; obtain authorization for the exact device/image before flashing.
+
+[Read the matching repository Agent skill](skills/README.md).

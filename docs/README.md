@@ -45,8 +45,9 @@ are outside the capability contract.
 ```text
 components/bsp/include/  stable APIs and the authoritative pin map
 components/bsp/src/      board resource ownership and hardware implementations
-main/                    one runnable record/playback and BLUFI reference demo
-main/data/gx_bl/         preserved GX8002 boot and wake-word firmware
+main/                    minimal board bring-up
+examples/hardware-demo/  independent record/playback and BLUFI diagnostic
+examples/hardware-demo/main/data/gx_bl/         preserved GX8002 boot and wake-word firmware
 docs/                    bilingual engineering and hardware documentation
 tests/                   repository-contract host tests
 tools/                   local static and isolated firmware validation

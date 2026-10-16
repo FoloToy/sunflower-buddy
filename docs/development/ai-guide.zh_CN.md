@@ -16,7 +16,7 @@
 ```
 
 可复用硬件能力放进 BSP，并通过精简的 `examples/hardware-demo/main/demo_*` 模块展示；事件路由保留在
-`main.cpp`，Wi-Fi/BLUFI 状态保留在 `demo_blufi.*`。耗时操作必须放在应用任务中，
+`examples/hardware-demo/main/main.cpp`，Wi-Fi/BLUFI 状态保留在 `demo_blufi.*`。耗时操作必须放在应用任务中，
 不能放在按键、蓝牙、Wi-Fi、定时器或中断回调中。复用现有 I2C 总线并保持明确的
 供电顺序，不得从通用 ESP32-S3 开发板猜测本设备引脚或电气行为。
 

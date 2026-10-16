@@ -7,7 +7,7 @@
 - 跟随相邻 C/C++ 文件，使用四空格缩进。公开板级 API 使用 `bsp_`，文件内状态使用
   `s_`，硬件常量使用 `BSP_*`。
 - 可复用的硬件资源所有权和时序放在 `components/bsp`；Demo 状态与用户交互放在
-  `main`。Wi-Fi/BLUFI 配网不是板级专用外设 API，保留在 `examples/hardware-demo/main/demo_blufi.*`。
+  `examples/hardware-demo/main` 或下游应用。Wi-Fi/BLUFI 配网不是板级专用外设 API，保留在 `examples/hardware-demo/main/demo_blufi.*`。
 - 引脚、总线、地址、时钟和已验证电气参数只能定义在
   `components/bsp/include/bsp_pins.h`。
 - 本硬件参考仓库不得加入产品服务、凭据、OTA、云协议或产品状态机。
